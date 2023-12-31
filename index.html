@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Open+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar navbar-expand-lg px-3">
+        <div class="container-fluid">
+          <a class="navbar-brand me-4 d-flex align-items-center" href="#">
+            <img
+              src="/img/header/logo.jpg"
+              srcset="/img/header/logo@1x.jpg 1x, /img/header/logo@2x.jpg 2x"
+              alt=""
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about-us">About-us</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Our-products
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#laptops">Laptops</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#devices">Gaming Devices</a>
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="#phones">Phones</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search our product"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="main">
+      <div
+        class="hero container-fluid d-flex flex-column justify-content-center align-items-center"
+      >
+        <div class="row">
+          <div class="col text-white hero__text">
+            Discover perfection in progressive world
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col text-white hero__text">
+            with <span class="hero__text--active">TechnoWorld</span>
+          </div>
+        </div>
+        <div class="row">
+          <button
+            type="button"
+            class="btn btn-light hero__btn"
+            id="openModalBtn"
+          >
+            Order easily now
+          </button>
+        </div>
+      </div>
+      <div class="backdrop is-hidden" data-backdrop>
+        <div class="modalc" data-modal>
+          <button
+            class="modal__close close modal__close--active"
+            data-modal-close
+            id="closeModalBtn"
+          >
+            X
+          </button>
+          <h3 class="modal__title">
+            Leave your contact info here, we will call you
+          </h3>
+          <form action="#" class="modal__form form">
+            <label for="name" class="modal__label label">Name</label>
+            <div class="form__wrapper wrapper form__wrapper--active">
+              <svg class="form__img img">
+                <use href="/img/icon.svg#black-person"></use>
+              </svg>
+              <input
+                type="name"
+                name="user_name"
+                id="name"
+                required
+                class="modal__input input"
+              />
+            </div>
+
+            <label for="tel" class="modal__label label">Phone number</label>
+            <div class="form__wrapper wrapper form__wrapper--active">
+              <svg class="form__img">
+                <use href="/img/icon.svg#tel"></use>
+              </svg>
+              <input
+                type="tel"
+                name="user_tel"
+                id="tel"
+                required
+                class="modal__input input"
+              />
+            </div>
+
+            <label for="email" class="modal__label label">E-mail</label>
+            <div class="form__wrapper wrapper form__wrapper--active">
+              <svg class="form__img form__img--active">
+                <use href="/img/icon.svg#email"></use>
+              </svg>
+              <input
+                type="email"
+                name="user_email"
+                id="email"
+                required
+                class="modal__input input"
+              />
+            </div>
+
+            <label for="comment" class="modal__label label">Comment</label>
+            <textarea
+              name="Comment"
+              id="comment"
+              class="modal__textarea textarea modal__textarea--active"
+            ></textarea>
+
+            <div class="checkbox__wrapper">
+              <input
+                type="checkbox"
+                id="check"
+                name="check"
+                required
+                class="modal__checkbox"
+              />
+              <label for="check" class="modal__accept"
+                >I agree with mailing and accept the
+                <a href="#" class="modal__link--active modal__link"
+                  >Terms of the agreement</a
+                ></label
+              >
+            </div>
+            <div class="button__wrapper">
+              <button type="submit" class="modal__send">Send</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="container-fluid mt-3">
+        <div class="row mb-4">
+          <h2 class="advantages__title mt-4">Our Advantages</h2>
+        </div>
+        <div class="row d-flex justify-content-center advantages">
+          <div
+            class="col-8 col-sm-4 col-lg-3 advantages__card bg-body-tertiary me-2 py-2"
+          >
+            <div class="advantage__img">
+              <img src="/img/advantages/speed.svg" alt="" class="mb-3" />
+            </div>
+            <h3 class="advantage__title text-light-emphasis">Speed</h3>
+            <p class="advantage__descr">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Similique, eveniet?
+            </p>
+          </div>
+
+          <div
+            class="col-8 col-sm-3 col-lg-3 advantages__card bg-body-tertiary me-2 pt-4"
+          >
+            <div class="advantage__img">
+              <img src="/img/advantages/quality.svg" alt="" class="mb-3" />
+            </div>
+            <h3 class="advantage__title text-light-emphasis">Quality</h3>
+            <p class="advantage__descr">Lorem ipsum dolor, sit amet.</p>
+          </div>
+
+          <div
+            class="col-8 col-sm-4 col-lg-3 advantages__card bg-body-tertiary py-3"
+          >
+            <div class="advantage__img">
+              <img src="/img/advantages/support.svg" alt="" class="mb-3" />
+            </div>
+            <h3 class="advantage__title text-light-emphasis">Support</h3>
+            <p class="advantage__descr">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Similique, eveniet?
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid about-us mt-3" id="about-us">
+        <div class="row">
+          <h2 class="about-us__title mt-4 mb-2">About us</h2>
+        </div>
+
+        <div class="row mt-1">
+          <p class="about-us__text text-center">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
+            aspernatur pariatur sit. Aperiam ut laudantium eligendi sequi
+            excepturi provident tempora eum quos, facere facilis aliquam beatae
+            quas molestiae obcaecati repellat. Exercitationem quo quasi mollitia
+            optio natus reprehenderit placeat impedit est, consequatur officia
+            odio aperiam voluptas animi eum aut fuga rerum.
+          </p>
+        </div>
+      </div>
+
+      <div class="container-fluid laptops mt-4" id="laptops">
+        <div class="row">
+          <h2 class="laptops__title text-center mb-5 mt-4">Laptops</h2>
+        </div>
+
+        <div class="row laptops">
+          <div class="card col-12 col-md-5 col-xl-3">
+            <div class="card__img">
+              <img
+                src="./img/laptops/rogstrix.png"
+                class="card-img-top"
+                alt="..."
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title mb-3">ASUS ROG STRIX G16</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <p class="card-price mb-4 mt-3">1999$</p>
+              <a href="#" class="btn btn-primary">Go to cart</a>
+            </div>
+          </div>
+          <div class="card col-12 col-md-5 col-xl-3">
+            <div class="card__img">
+              <img
+                src="./img/laptops/acer-predator.jpg"
+                class="card-img-top mb-5"
+                alt="..."
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title mb-3">Acer Predator</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <p class="card-price mb-4 mt-3">1599$</p>
+              <a href="#" class="btn btn-primary">Go to cart</a>
+            </div>
+          </div>
+
+          <div class="card col-12 col-md-5 col-xl-3">
+            <div class="card__img">
+              <img
+                src="./img/laptops/acer-nitro.jpg"
+                class="card-img-top mb-5"
+                alt="..."
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title mb-3">Acer Nitro 5</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <p class="card-price mb-4 mt-3">899$</p>
+              <a href="#" class="btn btn-primary">Go to cart</a>
+            </div>
+          </div>
+
+          <div class="card col-12 col-md-5 col-xl-3">
+            <div class="card__img">
+              <img
+                src="./img/laptops/asus-tuf.jpg"
+                class="card-img-top mb-5"
+                alt="..."
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title mb-3">Asus Tuf A15</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <p class="card-price mb-4 mt-3">1099$</p>
+              <a href="#" class="btn btn-primary">Go to cart</a>
+            </div>
+          </div>
+
+          <div class="card col-12 col-md-5 col-xl-3">
+            <div class="card__img">
+              <img
+                src="./img/laptops/msi.jpg"
+                class="card-img-top mb-5"
+                alt="..."
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title mb-3">MSI GF63</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <p class="card-price mb-4 mt-3">600$</p>
+              <a href="#" class="btn btn-primary">Go to cart</a>
+            </div>
+          </div>
+
+          <div class="card col-12 col-md-5 col-xl-3">
+            <div class="card__img">
+              <img
+                src="./img/laptops/hp.jpg"
+                class="card-img-top mb-5"
+                alt="..."
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title mb-3">HP Pavilion</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <p class="card-price mb-4 mt-3">999$</p>
+              <a href="#" class="btn btn-primary">Go to cart</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid laptops mt-4" id="devices">
+        <div class="row">
+          <h2 class="laptops__title text-center mb-5 mt-5">Gaming Devices</h2>
+        </div>
+
+        <div class="row laptops">
+          <div class="card col-12 col-md-5 col-xl-3">
+            <div class="card__img">
+              <img
+                src="./img/devices/hyperx.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title mb-3">Hyperx Cloud 2</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <p class="card-price mb-4 mt-3">120$</p>
+              <a href="#" class="btn btn-primary">Go to cart</a>
+            </div>
+          </div>
+          <div class="card col-12 col-md-5 col-xl-3">
+            <div class="card__img">
+              <img
+                src="./img/devices/gpro.jpg"
+                class="card-img-top mb-5"
+                alt="..."
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title mb-3 mt-5">Logitech G Pro Superlight</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <p class="card-price mb-4 mt-3">200$</p>
+              <a href="#" class="btn btn-primary">Go to cart</a>
+            </div>
+          </div>
+
+          <div class="card col-12 col-md-5 col-xl-3">
+            <div class="card__img">
+              <img
+                src="./img/devices/pulsfire.jpg"
+                class="card-img-top mb-5"
+                alt="..."
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title mb-3">HyperX Haste Wireless</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <p class="card-price mb-4 mt-3">100$</p>
+              <a href="#" class="btn btn-primary">Go to cart</a>
+            </div>
+          </div>
+
+          <div class="card col-12 col-md-5 col-xl-3">
+            <div class="card__img">
+              <img
+                src="./img/devices/gprohead.png"
+                class="card-img-top mb-5"
+                alt="..."
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title mb-3">Logitech G PRO 2nd GEN</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <p class="card-price mb-4 mt-3">250$</p>
+              <a href="#" class="btn btn-primary">Go to cart</a>
+            </div>
+          </div>
+
+          <div class="card col-12 col-md-5 col-xl-3">
+            <div class="card__img">
+              <img
+                src="./img/devices/deathadder.png"
+                class="card-img-top mb-5"
+                alt="..."
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title mb-3">Razer Deathadder v3</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <p class="card-price mb-4 mt-3">220$</p>
+              <a href="#" class="btn btn-primary">Go to cart</a>
+            </div>
+          </div>
+
+          <div class="card col-12 col-md-5 col-xl-3">
+            <div class="card__img">
+              <img
+                src="./img/devices/razer-kraken.png"
+                class="card-img-top mb-5"
+                alt="..."
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title mb-3">Razer Kraken V2</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <p class="card-price mb-4 mt-3">150$</p>
+              <a href="#" class="btn btn-primary">Go to cart</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid laptops mt-4" id="phones">
+        <div class="row">
+          <h2 class="laptops__title text-center mb-5 mt-5">Phones</h2>
+        </div>
+
+        <div class="row laptops">
+          <div class="card col-12 col-md-5 col-xl-3">
+            <div class="card__img">
+              <img
+                src="./img/phones/iphonex.png"
+                class="card-img-top pt-5"
+                alt="..."
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title mb-3 mt-5">Iphone X</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <p class="card-price mb-4 mt-3">300$</p>
+              <a href="#" class="btn btn-primary">Go to cart</a>
+            </div>
+          </div>
+          <div class="card col-12 col-md-5 col-xl-3">
+            <div class="card__img">
+              <img
+                src="./img/phones/iphone12.jpg"
+                class="card-img-top mb-5"
+                alt="..."
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title mb-3">Iphone 12 Pro</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <p class="card-price mb-4 mt-3">500$</p>
+              <a href="#" class="btn btn-primary">Go to cart</a>
+            </div>
+          </div>
+
+          <div class="card col-12 col-md-5 col-xl-3">
+            <div class="card__img">
+              <img
+                src="./img/phones/se2.png"
+                class="card-img-top mb-5"
+                alt="..."
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title mb-3">Iphone SE(2nd Gen)</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <p class="card-price mb-4 mt-3">250$</p>
+              <a href="#" class="btn btn-primary">Go to cart</a>
+            </div>
+          </div>
+
+          <div class="card col-12 col-md-5 col-xl-3">
+            <div class="card__img">
+              <img
+                src="./img/phones/iphone13.jpg"
+                class="card-img-top mb-5"
+                alt="..."
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title mb-3">Iphone 13</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <p class="card-price mb-4 mt-3">650$</p>
+              <a href="#" class="btn btn-primary">Go to cart</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container-fluid footer__container d-flex">
+        <div class="footer__img row">
+          <img src="/img/header/logo.jpg" alt="" />
+        </div>
+        <div class="row">
+          <ul class="col">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about-us">About-us</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Our-products
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item text-center" href="#laptops"
+                    >Laptops</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item text-center" href="#devices"
+                    >Gaming Devices</a
+                  >
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#phones">Phones</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="row contacts">
+          <h3 class="contacts__title contacts__item">Contact us</h3>
+          <a href="" class="contacts__item">+1234567890</a>
+          <a href="" class="contacts__item">abcdefg@gmail.com</a>
+        </div>
+      </div>
+    </footer>
+    <script src="/js/modal.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
