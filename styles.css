@@ -4,16 +4,6 @@ body {
   font-weight: 500;
 }
 
-img {
-  width: 100%;
-  display: block;
-  max-width: 100%;
-}
-
-li {
-  list-style-type: none;
-}
-
 .navbar-brand {
   width: 100px;
   height: 100px;
